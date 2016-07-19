@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nodejs_Form</title>
+
+
+<script>
+
+//	회원가입 버튼을 누르면, 입력 양식에 작성한 데이터를
+//	서버로 전송한다. (현재는 서버와 네트워크가 끊겨있다.)
+
+var bt;
+//var id;
+//var pwd;
+//var name;
+
+window.addEventListener("load", function(){
+
+	bt = document.getElementById("bt");
+	//id = document.getElementsByName("id");
+	//pwd = document.getElementsByName("pwd");
+	//name = document.getElementsByName("name");
+
+	bt.addEventListener("click", function(){
+
+		regist();
+
+	});
+
+});
+
+function regist(){
+
+	if( !form1.id.value ){
+
+		alert("아이디를 입력하세요");
+		form1.id.focus();
+		return;
+
+	}
+
+	if( !form1.pwd.value ){
+
+		alert("패스워드를 입력하세요");
+		form1.pwd.focus();
+		return;
+
+	}
+
+	if( !form1.name.value ){
+
+		alert("이름을 입력하세요");
+		form1.name.focus();
+		return;
+
+	}
+
+	form1.action="/regist";		//	서버의 url (데이터를 어디로 보낼지)
+	form1.submit();		//	실제 전송이 일어나는 시점(동작시점)
+
+}
+
+
+</script>
+
+
+</head>
+<body>
+
+<form name="form1" method="post">
+
+	<table width="400px" align="center" border="1px solid">
+
+		<tr>
+		
+			<td colspan="2" size="20pt" align="center">박지호다</td>
+		
+		</tr>
+
+		<tr>
+		
+			<td>ID</td>
+			<td><input type="text" name="id"></td>
+		
+		</tr>
+
+		<tr>
+		
+			<td>Password</td>
+			<td><input type="text" name="pwd"></td>
+		
+		</tr>
+
+		<tr>
+		
+			<td>Name</td>
+			<td><input type="text" name="name"></td>
+		
+		</tr>
+
+		<tr>
+		
+			<td colspan="2" align="center">
+
+				<button id="bt">회원가입</button>
+
+			</td>
+		
+		</tr>
+		
+		
+	</table>
+
+<form>
+
+</body>
+</html>
+
+<!-- -->
